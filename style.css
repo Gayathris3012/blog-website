@@ -1,0 +1,362 @@
+body {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "navbar navbar"
+    "main main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  grid-area: navbar;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 40px;
+  background: wheat;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 2px;
+  backdrop-filter: blur(50px);
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  padding: 1rem;
+}
+
+#header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.features-post {
+  width: 65%;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  font-weight: bold;
+}
+
+.features-post .morning-img img,
+.features-post .features-content {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.features-post .features-content {
+  background: linear-gradient(
+    rgba(249, 204, 173, 0.5),
+    rgba(243, 188, 150, 0.8)
+  );
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.features-content a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.features-content a:hover {
+  color: rgb(138, 63, 9);
+}
+
+.other-post .post-list img {
+  height: 200px;
+  width: 300px;
+}
+
+.other-post {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2rem;
+  row-gap: 20px;
+}
+
+.post-list {
+  flex-basis: 50%;
+  display: flex;
+}
+
+.post-list .post-content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#footer {
+  text-align: center;
+}
+
+.back-button {
+  background-color: rgb(190, 134, 29);
+  height: 40px;
+  width: 10%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+  margin: 6px;
+}
+
+.post-page a {
+  text-decoration: none;
+  color: white;
+}
+
+.back-button:hover {
+  background-color: rgb(218, 154, 35);
+}
+
+.post-page-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.post-page-img img {
+  padding: 1rem;
+  height: 800px;
+  width: 900px;
+}
+
+.post-page-content {
+  padding: 20px;
+  text-align: justify;
+  box-sizing: border-box;
+  height: 500px;
+  width: 900px;
+}
+
+.post-page-content p {
+  line-height: 2.5;
+  font-size: 1.2rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.author p {
+  font-size: 16px;
+}
+
+.about-page {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-page .about-img img,
+.about-page .about-content {
+  height: 500px;
+  width: 500px;
+}
+
+.about-page .about-content {
+  font-size: 1.2rem;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 2;
+  text-align: justify;
+}
+
+.contact-page {
+}
+
+.contact-page h1 {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.contact-form-fields {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-form .contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact-form .contact-form-fields input,
+textarea {
+  width: 50%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form-fields label {
+  font-size: 20px;
+}
+
+.submit-button {
+  display: flex;
+  padding: 20px 0;
+}
+
+button {
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 15%;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: opacity 0.5s;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.search-bar {
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .features-post {
+    flex-direction: column;
+  }
+
+  .other-post {
+    flex-direction: column;
+  }
+
+  .post-page-img img {
+    padding: 1rem;
+    height: 600px;
+    width: 700px;
+  }
+
+  .post-page-content {
+    padding: 15px;
+    height: 400px;
+    width: 700px;
+  }
+  .post-page-content p {
+    line-height: 2;
+    font-size: 1.1rem;
+  }
+
+  .back-button {
+    width: 20%;
+  }
+
+  .about-page {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .features-post {
+    font-size: 14px;
+  }
+  .features-post .morning-img img,
+  .features-post .features-content {
+    height: 350px;
+    width: 350px;
+  }
+
+  .features-post .features-content {
+    padding: 15px;
+  }
+
+  .other-post .post-list img {
+    height: 150px;
+    width: 250px;
+  }
+
+  .other-post {
+    padding: 1.5rem;
+    row-gap: 15px;
+  }
+
+  .post-list .post-content {
+    padding: 15px;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .post-page-img img {
+    padding: 1rem;
+    height: 400px;
+    width: 500px;
+  }
+
+  .post-page-content {
+    padding: 10px;
+    height: 350px;
+    width: 500px;
+  }
+  .post-page-content p {
+    line-height: 2;
+    font-size: 1rem;
+  }
+
+  .back-button {
+    width: 30%;
+  margin: 30px;
+
+  }
+}
